@@ -1,0 +1,51 @@
+<section id="login-page">
+    <div class="login-section">
+        <mat-card>
+            <mat-card-header>
+                <h3 class="login-card-title">Sign In</h3>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form
+                    class="login-form"
+                    [formGroup]="loginForm"
+                    (ngSubmit)="onSubmit()"
+                >
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input
+                            matInput
+                            type="email"
+                            placeholder="Enter your email"
+                            formControlName="username"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input
+                            matInput
+                            type="password"
+                            placeholder="Enter your password"
+                            formControlName="password"
+                        />
+                    </mat-form-field>
+
+                    <mat-checkbox
+                        class="remember-me__checkbox"
+                        formControlName="rememberMe"
+                        >Remember Me</mat-checkbox
+                    >
+
+                    <button
+                        mat-flat-button
+                        color="primary"
+                        class="ng-admin__primary"
+                    >
+                        Login
+                    </button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</section>
