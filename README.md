@@ -1,5 +1,7 @@
 /\*\* You need to think about lazy loading feature state
 
+and we can create store folder in every feature folder and generate feature reducer and add it to the app/reducers.index.ts
+
 To Generate the Initial Store Use the below command
 ng generate store State --root --module app.module.ts --dry-run
 
