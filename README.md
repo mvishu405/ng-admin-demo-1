@@ -1,27 +1,20 @@
-# NgAdminDemo1
+/\*\* You need to think about lazy loading feature state
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+To Generate the Initial Store Use the below command
+ng generate store State --root --module app.module.ts --dry-run
 
-## Development server
+/\*\*This one you use to generate the inital state strucute
+ng generate store store/State --root --module ../app.module.ts --dry-run
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To Generate the The Reducers Structure use the following command
+ng generate reducer User --reducers reducers/index.ts --dry-run
+ng generate reducer store/User --reducers reducers/index.ts --dry-run
 
-## Code scaffolding
+To Generate the Action use the following command
+ng generate action User --flat false --dry-run
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To Generate All at once use the following command
+ng generate feature news/news --flat --group --reducers ../reducers/index.ts --dry-run
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+/\*\*\* This you can use to generate state structure and add it to the inital state structure
+ng generate feature store/news/news --flat --group --reducers ../reducers/index.ts --dry-run
