@@ -2,49 +2,52 @@
     <div class="login-section">
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Actions Buttons</mat-card-title>
-                <h3 class="login-card-title">Sign In</h3>
+                <mat-card-title>Login</mat-card-title>
             </mat-card-header>
-
             <mat-card-content>
-                <form
-                    class="login-form"
-                    [formGroup]="loginForm"
-                    (ngSubmit)="onSubmit()"
-                >
-                    <mat-form-field appearance="outline">
+                <form>
+                    <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Email</mat-label>
                         <input
                             matInput
-                            type="email"
                             placeholder="Enter your email"
-                            formControlName="username"
+                            type="email"
                         />
+                        <mat-icon matSuffix>email</mat-icon>
                     </mat-form-field>
 
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Password</mat-label>
                         <input
                             matInput
-                            type="password"
                             placeholder="Enter your password"
-                            formControlName="password"
+                            type="password"
                         />
+                        <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
 
-                    <mat-checkbox
-                        class="remember-me__checkbox"
-                        formControlName="rememberMe"
-                        >Remember Me</mat-checkbox
-                    >
+                    <mat-checkbox class="remember-me">Remember me</mat-checkbox>
 
-                    <button
-                        mat-flat-button
-                        color="primary"
-                        class="ng-admin__primary"
-                    >
-                        Login
-                    </button>
+                    <div class="divider"></div>
+                    <div class="social-login-title">Social Login</div>
+
+                    <div class="social-login-icons">
+                        <button mat-mini-fab color="primary">
+                            <mat-icon>facebook</mat-icon>
+                        </button>
+                        <button mat-mini-fab color="primary">
+                            <mat-icon>twitter</mat-icon>
+                        </button>
+                        <button mat-mini-fab color="primary">
+                            <mat-icon>google</mat-icon>
+                        </button>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <button mat-raised-button color="primary">Login</button>
                 </form>
             </mat-card-content>
         </mat-card>

@@ -8,8 +8,10 @@ import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CounterComponent } from './counter/counter.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
-    declarations: [AppComponent, LoginComponent],
+    declarations: [AppComponent, LoginComponent, CounterComponent, AdminComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

@@ -34,4 +34,14 @@ export class LoginComponent implements OnInit {
     }
 
     // private methods
+
+    username!: string;
+    password!: string;
+    rememberMe!: string;
+
+    login() {
+        // Perform login logic here
+        console.log('Username:', this.username);
+        console.log('Password:', this.password);
+    }
 }

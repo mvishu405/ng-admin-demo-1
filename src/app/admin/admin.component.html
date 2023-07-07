@@ -1,0 +1,123 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="toolbar-title">Admin Dashboard</span>
+    <span class="spacer"></span>
+    <mat-button-toggle [matMenuTriggerFor]="menu" class="profile-button">
+        <mat-icon class="anchor-icon">anchor</mat-icon>
+    </mat-button-toggle>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <div class="profile-panel">
+        <div class="avatar-container">
+            <mat-icon class="avatar">account_circle</mat-icon>
+        </div>
+        <span class="email">user@example.com</span>
+        <button mat-menu-item (click)="logout()">Logout</button>
+    </div>
+</mat-menu>
+
+<mat-drawer-container class="container" [class.sidebar-open]="isSidebarOpen">
+    <!-- Side menu -->
+    <mat-drawer mode="side" [opened]="isSidebarOpen" class="sidebar">
+        <!-- Add your menu items here -->
+        <mat-nav-list class="sidebar-list" role="navigation">
+            <a mat-list-item>
+                <mat-icon>dashboard</mat-icon>
+                <span>Dashboard</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>people</mat-icon>
+                <span>Users</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>description</mat-icon>
+                <span>Invoices</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>person</mat-icon>
+                <span>Clients</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>store</mat-icon>
+                <span>Products</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </a>
+        </mat-nav-list>
+    </mat-drawer>
+
+    <!-- Main content area -->
+    <mat-drawer-content>
+        <div class="form-heading">
+            <h2>Create an Invoice</h2>
+        </div>
+        <!-- Add your content here -->
+
+        <mat-card class="form-card">
+            <mat-card-content>
+                <form>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Customer Name</mat-label>
+                                <input
+                                    matInput
+                                    placeholder="Enter customer name"
+                                    required
+                                />
+                                <mat-icon matPrefix>person</mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="form-column">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Invoice Number</mat-label>
+                                <input
+                                    matInput
+                                    placeholder="Enter invoice number"
+                                    required
+                                />
+                                <mat-icon matPrefix>receipt</mat-icon>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Amount</mat-label>
+                                <input
+                                    matInput
+                                    placeholder="Enter amount"
+                                    type="number"
+                                    required
+                                />
+                                <mat-icon matPrefix>attach_money</mat-icon>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <button
+                                mat-raised-button
+                                color="primary"
+                                type="submit"
+                            >
+                                Create Invoice
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </mat-drawer-content>
+</mat-drawer-container>

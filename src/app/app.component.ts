@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { State } from './store/reducers';
 import * as fromApp from './store/app/index';
+import { CounterStore } from './counter/counter.store';
 @Component({
     selector: 'ngAdmin-root',
     templateUrl: './app.component.html',
@@ -10,9 +11,7 @@ import * as fromApp from './store/app/index';
 })
 export class AppComponent implements OnInit {
     title$!: Observable<string>;
-
     constructor(private store: Store<State>) {}
-
     ngOnInit(): void {
         this.title$ = this.store.select(fromApp.selectAppStateName);
     }

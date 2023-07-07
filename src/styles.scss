@@ -82,26 +82,27 @@ $ng-admin-secondary-palette: mat.define-palette(
 // Font
 
 $ng-admin-typography: mat.define-typography-config(
-    $button:
-        mat.define-typography-level(
-            $font-family: "Poppins",
-            $font-weight: 600,
-            $font-size: 14px,
-            $line-height: 1,
-            $letter-spacing: normal,
-        ),
-    //         headline-1	One-off header, usually at the top of the page (e.g. a hero header).
-    // headline-2	One-off header, usually at the top of the page (e.g. a hero header).
-    // headline-3	One-off header, usually at the top of the page (e.g. a hero header).
-    // headline-4	One-off header, usually at the top of the page (e.g. a hero header).
-    // headline-5	Section heading corresponding to the <h1> tag.
-    // headline-6	Section heading corresponding to the <h2> tag.
-    // subtitle-1	Section heading corresponding to the <h3> tag.
-    // subtitle-2	Section heading corresponding to the <h4> tag.
-    // body-1	Base body text.
-    // body-2	Secondary body text.
-    // caption	Smaller body and hint text.
-    // button	Buttons and anchors.,
+    $font-family: "Poppins",
+    // $button:
+    //     mat.define-typography-level(
+    //         $font-family: "Poppins",
+    //         $font-weight: 600,
+    //         $font-size: 14px,
+    //         $line-height: 1,
+    //         $letter-spacing: normal,
+    //     ),
+    // //         headline-1	One-off header, usually at the top of the page (e.g. a hero header).
+    // // headline-2	One-off header, usually at the top of the page (e.g. a hero header).
+    // // headline-3	One-off header, usually at the top of the page (e.g. a hero header).
+    // // headline-4	One-off header, usually at the top of the page (e.g. a hero header).
+    // // headline-5	Section heading corresponding to the <h1> tag.
+    // // headline-6	Section heading corresponding to the <h2> tag.
+    // // subtitle-1	Section heading corresponding to the <h3> tag.
+    // // subtitle-2	Section heading corresponding to the <h4> tag.
+    // // body-1	Base body text.
+    // // body-2	Secondary body text.
+    // // caption	Smaller body and hint text.
+    // // button	Buttons and anchors.,,,,,,,,,,,,,,,,,,,,,
 );
 // End
 
@@ -111,6 +112,7 @@ $ng-admin-demo-1-theme: mat.define-light-theme(
     (
         color: (
             primary: $ng-admin-demo-1-primary,
+            // primary: $ng-admin-primary-palette,
             accent: $ng-admin-secondary-palette,
             warn: $ng-admin-demo-1-warn,
         ),
@@ -158,4 +160,22 @@ body {
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
+}
+
+.mat-drawer {
+    .mat-mdc-nav-list {
+        .mat-mdc-list-item {
+            .mdc-list-item__content {
+                height: 100%;
+                display: inline-block;
+                > span {
+                    height: 100%;
+                    display: inline-grid;
+                    grid-auto-flow: column;
+                    column-gap: 16px;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }
