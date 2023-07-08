@@ -11,7 +11,9 @@ import { CounterStore } from './counter/counter.store';
 })
 export class AppComponent implements OnInit {
     title$!: Observable<string>;
+
     constructor(private store: Store<State>) {}
+
     ngOnInit(): void {
         this.title$ = this.store.select(fromApp.selectAppStateName);
     }

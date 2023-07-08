@@ -102,7 +102,7 @@ $ng-admin-typography: mat.define-typography-config(
     // // body-1	Base body text.
     // // body-2	Secondary body text.
     // // caption	Smaller body and hint text.
-    // // button	Buttons and anchors.,,,,,,,,,,,,,,,,,,,,,
+    // // button	Buttons and anchors.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 // End
 
@@ -179,3 +179,24 @@ body {
         }
     }
 }
+
+/* Sizing classes for Angular Material buttons */
+.x-large {
+    font-size: 24px;
+    padding: 16px 24px;
+    height: auto !important;
+}
+
+.x2-large {
+    font-size: 32px;
+    padding: 24px 32px;
+    height: auto !important;
+}
+
+.x3-large {
+    font-size: 48px;
+    padding: 36px 48px;
+    height: auto !important;
+}
+
+/* Add more sizing classes as needed */

@@ -1,0 +1,32 @@
+<form action="" method="post">
+    <input type="text" />
+    <input type="text" />
+    <input type="submit" />
+</form>
+
+<!-- Reactive FormControl -->
+<input type="text" [formControl]="name" />
+
+{{ name.value }}
+{{ name.valueChanges | async }}
+
+<!-- Reactive FormGroup -->
+<form [formGroup]="profileForm" (submit)="onProfileFormSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName" />
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName" />
+
+    <input type="submit" value="Submit" />
+</form>
+
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <mat-form-field>
+        <input matInput formControlName="name" placeholder="Name" />
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput formControlName="email" placeholder="Email" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
